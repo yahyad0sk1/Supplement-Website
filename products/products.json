@@ -1,0 +1,20 @@
+[
+  {
+    "id": "Gold-Standard",
+    "name": "Gold Standard Whey",
+    "shortDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "price": "$59.9",
+    "category": "protein",
+    "image": "../images/Golden Standard Whey.png",
+    "description": "<b>Gold Standard 100% Whey</b> is the world’s most trusted protein powder, designed to support muscle recovery and growth. Each serving delivers <b>24g of high-quality whey protein</b>. <hr> <br><br><ul><li><b>High Protein:</b> 24g per scoop to build and repair muscle.</li><li><b>BCAAs:</b> 5.5g of naturally occurring amino acids for endurance.</li><li><b>Fast Absorbing:</b> Ideal for drinking right after your gym session.</li><li><b>Easy Mix:</b> No clumps—just use a shaker or a glass and spoon.</li></ul>"
+  },
+  {
+    "id": "creatine-mono",
+    "name": "Micronized Creatine",
+    "shortDesc": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+    "price": "$30",
+    "category": "creatine",
+    "image": "../images/Creatine Monohydrate.png",
+    "description": "Pure creatine monohydrate for explosive power."
+  }
+]

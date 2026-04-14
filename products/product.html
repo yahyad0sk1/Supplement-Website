@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="Product-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../Font Awesome/css/all.css">
+
+        <title>Supplement Store</title>
+        <link rel="icon" type="image/x-icon" href="../images/logo.jpg">
+    </head>
+    <body>
+
+        <header>
+            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </header>
+
+        <!-- Cart -->
+        <div class="cart-btn-container" onclick="openCart()">
+            <div class="cart-circle">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+
+        <div id="cart-sidebar" class="cart-sidebar">
+            <div class="cart-header">
+                <h3>Your Basket</h3>
+                <i class="fa-solid fa-xmark" onclick="closeCart()"></i>
+            </div>
+            
+            <div id="cart-items-container">
+                </div>
+
+            <div class="cart-footer">
+                <div class="total-price">
+                    <span>Total:</span>
+                    <span id="total-amount">$0.00</span>
+                </div>
+                <button class="order-now-btn" onclick="goToCheckout()">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Product -->
+        <div class="product-container">
+            <div class="product-image" style="grid-area: box-1;">
+                <img id="product-img" src="" alt="">
+            </div>
+            <div class="product-details" style="grid-area: box-2;">
+                <h1 id="product-name">Loading...</h1>
+                <div class="order-section">
+                    <div class="price-add">
+                        <button id="add-to-cart" class="order-button" onclick="handleProductAdd()">Add to Cart</button>  
+                        <p id="product-price"></p>
+                    </div>
+                    <p class="delivery">🚚 Fast Delivery to all cities in Iraq & Kurdistan</p>
+                </div>
+            </div>
+            <p id="product-desc" style="grid-area: box-3;"></p>
+        </div>
+
+    </body>
+
+
+    <script src="../cart.js"></script>
+    <script src="Product.js"></script>
+
+</html>
