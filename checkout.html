@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Supplement Store</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+   (function(){
+      emailjs.init("DoWocL42msi0hbQWj"); 
+   })();
+</script>
+</head>
+<body>
+
+    <div class="checkout-container">
+        <h2>Complete Your Order</h2>
+        <br>
+        
+        <div class="order-box" id="order-summary">
+            <h4>Order Summary</h4>
+            <hr><br>
+            <div id="checkout-items"></div>
+            <hr>
+            <div class="item-summary" style="font-weight: bold; margin-top: 10px;">
+                <span>Total:</span>
+                <span id="checkout-total">$0.00</span>
+            </div>
+        </div>
+
+        <div class="order-box">
+            <h4>Your Information</h4><br>
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="cust-name" placeholder="Your Name">
+            </div>
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="number" id="cust-phone" placeholder="07XX XXX XXXX">
+            </div>
+            <div class="input-group">
+                <label>City / Location</label>
+                <input type="text" id="cust-address" placeholder="Duhok, Zakho, Hewler...">
+            </div>
+            
+            <button class="confirm-btn" onclick="sendOrder()">Confirm Order Now</button>
+        </div>
+    </div>
+
+    <script src="cart.js"></script> <script>
+    function loadCheckout() {
+        let cart = JSON.parse(localStorage.getItem('myBasket')) || [];
+        let itemsContainer = document.getElementById('checkout-items');
+        let totalElement = document.getElementById('checkout-total');
+        
+        let subtotal = 0;
+        let deliveryFee = 5; 
+
+        itemsContainer.innerHTML = "";
+        cart.forEach(item => {
+            subtotal += item.price * item.quantity;
+            itemsContainer.innerHTML += `
+                <div class="item-summary">
+                    <span>${item.quantity}x ${item.name}</span>
+                    <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                </div>
+            `;
+        });
+
+        let finalTotal = subtotal + deliveryFee;
+
+        itemsContainer.innerHTML += `
+            <div class="item-summary" style="color: #666; border-top: 1px solid #eee; padding-top: 10px;">
+                <span>Delivery Fee:</span>
+                <span>$${deliveryFee.toFixed(2)}</span>
+            </div>
+        `;
+
+        totalElement.innerText = `$${finalTotal.toFixed(2)}`;
+    }
+
+    function sendOrder() {
+        let btn = document.querySelector('.confirm-btn');
+        let name = document.getElementById('cust-name').value;
+        let phone = document.getElementById('cust-phone').value;
+        let address = document.getElementById('cust-address').value;
+        let cart = JSON.parse(localStorage.getItem('myBasket')) || [];
+        let total = document.getElementById('checkout-total').innerText;
+
+        if(!name || !phone || !address || cart.length === 0) {
+            alert("Please fill in all details!");
+            return;
+        }
+
+        btn.innerText = "Sending...";
+        btn.disabled = true;
+
+        let orderList = cart.map(item => `${item.quantity}x ${item.name}`).join("\n");
+
+        let templateParams = {
+            customer_name: name,
+            customer_phone: phone,
+            customer_address: address,
+            order_details: orderList,
+            total_price: total
+        };
+
+        emailjs.send('service_j3tzg4i', 'template_yvu2ley', templateParams)
+            .then(function(response) {
+               alert('SUCCESS! Your order has been placed.');
+               localStorage.removeItem('myBasket'); 
+               window.location.href = 'index.html'; 
+            }, function(error) {
+               alert('FAILED... ' + JSON.stringify(error));
+               btn.innerText = "Confirm Order Now";
+               btn.disabled = false;
+            });
+    }
+
+// 1. This handles the initial load
+    window.onload = loadCheckout;
+
+    // 2. This is a "Safety Net" 
+    // It runs immediately just in case window.onload is skipped
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        loadCheckout();
+    }
+</script>
+</body>
+</html>

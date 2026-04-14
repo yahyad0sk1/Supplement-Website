@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Font Awesome/css/all.css">
+
+    <title>supplements store</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+</head>
+<body>
+
+    <!-- main header -->
+    <header>
+        <div class="logo"><img src="/images/logo.jpg" alt=""></div>
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropbtn" onclick="toggleDropdown()">Supplement</a>
+                        <ul class="dropdown-content" id="supplementDropdown" style="display: none;">
+                            <li><a href="#Best-Sales">BEST SALES</a></li>
+                            <li><a href="#Protien-Powders">PROTIEN POWDERS</a></li>
+                            <li><a href="#Performance-Energy">PERFORMANCE & ENERGY</a></li>
+                            <li><a href="#Strength-Basics">STRENGTH & BASICS</a></li>
+                            <li><a href="#Health-Wellness">HEALTH & WELLNESS</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/Catalog/Catalog.html">Catalog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Home Page -->
+    <div class="hero-image" id="home">
+        <img src="/images/background-image-home.jpg">
+        <div class="home container">
+        <h1>FUEL YOUR <span>AMBITION</span></h1>
+        <p>Premium protein, creatine, and pre-workouts delivered to your door in ----. No compromises, just power. <br><span class="delivery">🚚 Fast Delivery to all cities in Iraq & Kurdistan</span></p>
+        <a href="#Best-Sales">Shop Now</a>
+    </div>
+    </div>
+
+    <!-- Cart -->
+    <div class="cart-btn-container" onclick="openCart()">
+        <div class="cart-circle">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </div>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Basket</h3>
+            <i class="fa-solid fa-xmark" onclick="closeCart()"></i>
+        </div>
+        
+        <div id="cart-items-container">
+            </div>
+
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="total-amount">$0.00</span>
+            </div>
+            <button class="order-now-btn" onclick="goToCheckout()">Order Now</button>
+        </div>
+    </div>
+
+    <!-- Best Sales Section -->
+     <div class="container">
+        <div class="header-section" id="Best-Sales">
+            <h1>Best Sales</h1>
+            <a class="see-more" href="/Catalog/Catalog.html">See All</a>
+        </div>
+        <div class="card-list">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="products/Product.html?id=Gold-Standard">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Protien Powders Section -->
+        <div class="header-section" id="Protien-Powders">
+            <h1>Protien Powders</h1>
+            <a class="see-more" href="Catalog/Catalog.html">See All</a>
+        </div>
+        <div class="card-list">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Dymatize Super Mass.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Dymatize Mass Gainer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$79.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">Order</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Golden Standard Whey.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Whey Standard</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Dymatize Super Mass.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Dymatize Mass Gainer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$79.9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PERFORMANCE & ENERGY Section -->
+        <div class="header-section" id="Performance-Energy">
+            <h1>PERFORMANCE & ENERGY</h1>
+            <a class="see-more" href="Catalog/Catalog.html">See All</a>
+        </div>
+        <div class="card-list">
+            <div class="card" id="Gold-Standard">
+                <div class="card-image">
+                    <img src="images/Gold Standard Pre-Workout.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Standard Pre-Workout</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Gold Standard Pre-Workout.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Golden Standard Pre-Workout</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/TL Pump.png" alt="card-img">
+                </div>
+                <h2 class="product-name">TL Pump</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- STRENGTH & BASICS Section -->
+        <div class="header-section" id="Strength-Basics">
+            <h1>STRENGTH & BASICS</h1>
+            <a class="see-more" href="/Catalog/Catalog.html">See All</a>
+        </div>
+        <div class="card-list">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Micronized Creatine.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Micronized Creatine Powder</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Creatine Monohydrate.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Creatine Monohydrate</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/Micronized Creatine.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Micronized Creatine Powder</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/BCAA GlutamineZero Orange.png" alt="card-img">
+                </div>
+                <h2 class="product-name">BCAA GlutamineZero Orange</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEALTH & WELLNESS Section -->
+        <div class="header-section" id="Health-Wellness">
+            <h1>HEALTH & WELLNESS</h1>
+            <a class="see-more" href="/Catalog/Catalog.html">See All</a>
+        </div>
+        <div class="card-list">
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/omega-3.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Omega-3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="images/omega-3.png" alt="card-img">
+                </div>
+                <h2 class="product-name">Omega-3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <div class="order-price">
+                    <a class="order-button" href="#">View</a>
+                    <p class="price">$59.9</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>HAVE QUESTIONS? <span>CHAT WITH US</span></h2>
+                <p>Not sure which creatine is right for you? Text us on WhatsApp for a free consultation and fast delivery.</p>
+
+                <div class="contact-buttons">
+                    <a href="https://wa.me/yournumberhere" class="contact-btn whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                
+                    <a href="https://instagram.com/yourprofile" class="contact-btn instagram">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+    <div class="container">
+        <div class="footer-content">
+            <img src="/images/logo.jpg" alt="Logo" class="mini-footer-logo">
+
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+
+            <div class="footer-legal">
+                <a href="index.html">Home</a>
+                <a href="/Catalog/Catalog.html">Catalog</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <p class="copyright">&copy; 2026 Supplement Store</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="cart.js"></script>
+    <script src="javascript.js"></script>
+
+</body>
+</html>
