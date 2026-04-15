@@ -56,16 +56,17 @@ header i {
     width: 90%;
     max-width: 600px;
     margin: 120px auto;
+    text-align: center;
 }
 
 .product-container .product-image {
     background-color: var(--background-color-card-image);
     border-radius: var(--border-radius-card);
     box-shadow: 0 4px 12px var(--shadow-color-card);
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     max-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
 }
 
@@ -74,9 +75,9 @@ header i {
     height: auto;
 }
 
-.product-container .product-details {
+/* .product-container .product-details {
     text-align: center;
-}
+} */
 
 .product-container .product-details #product-name {
     margin: 10px 0;
