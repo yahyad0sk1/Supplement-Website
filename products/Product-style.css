@@ -59,12 +59,14 @@ header i {
 }
 
 .product-container .product-image {
+    display: block;
     background-color: var(--background-color-card-image);
     border-radius: var(--border-radius-card);
+    box-shadow: 0 4px 12px var(--shadow-color-card);
     width: 100%;
     max-width: 300px;
-    justify-self: center;
-    box-shadow: 0 4px 12px var(--shadow-color-card);
+    margin: 0 auto;
+    height: auto;
 }
 
 .product-container #product-img {
