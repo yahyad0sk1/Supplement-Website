@@ -59,18 +59,19 @@ header i {
 }
 
 .product-container .product-image {
-    display: block;
     background-color: var(--background-color-card-image);
     border-radius: var(--border-radius-card);
     box-shadow: 0 4px 12px var(--shadow-color-card);
-    width: 100%;
     max-width: 300px;
-    margin: 0 auto;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .product-container #product-img {
     width: 100%;
+    height: auto;
 }
 
 .product-container .product-details {
