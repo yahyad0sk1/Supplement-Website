@@ -167,7 +167,6 @@ header i {
         grid-template-areas: "box-1 box-3"
         "box-2 box-3";
         max-width: 800px;
-        margin: 120px auto;
     }
     .product-container .product-image {
         max-width: 300px;
